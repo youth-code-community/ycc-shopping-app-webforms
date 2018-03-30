@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27520.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ycc-shopping-app-webforms", "ycc-shopping-app-webforms\ycc-shopping-app-webforms.csproj", "{727DA093-947C-4F0A-B8D6-E4B1DB72991D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{727DA093-947C-4F0A-B8D6-E4B1DB72991D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{727DA093-947C-4F0A-B8D6-E4B1DB72991D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{727DA093-947C-4F0A-B8D6-E4B1DB72991D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{727DA093-947C-4F0A-B8D6-E4B1DB72991D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C8E41EE0-5D8E-4F23-9070-21FF066C3C93}
+	EndGlobalSection
+EndGlobal
