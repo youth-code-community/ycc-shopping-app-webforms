@@ -8,5 +8,6 @@ namespace ShoppingLibrary
 {
     public class Payments
     {
+
     }
 }
