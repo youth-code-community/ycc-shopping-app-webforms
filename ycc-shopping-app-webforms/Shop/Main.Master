@@ -1,19 +1,211 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="ycc_shopping_app_webforms.Shop.Main" %>
 
 <!DOCTYPE html>
-
 <html>
 <head runat="server">
-    <title></title>
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
+    <title>shopnow</title>
+
+    <meta charset="utf-8" />
+    <link href="~/Styles/css/bootstrap.min.css" rel="stylesheet">
+    <script src="~/Styles/Scripts/bootstrap.min.js"></script>
+    <script src="~/Styles/Scripts/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="~/Styles/css/groc.css">
 </head>
 <body>
-    <form id="form1" runat="server">
-        <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
+    <!--collapsing  nav bar-->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Grocery Shop</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarsExampleDefault">
+                <ul class="navbar-nav m-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="Default.aspx">Home</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="#categories">Categories</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="shopnow.aspx">Cart</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#categories">Signup</a>
+                    </li>
+                </ul>
+
+                <form class="form-inline my-2 my-lg-0" runat="server">
+                    <div class="input-group input-group-sm">
+                        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="Search..."/>
+                        <div class="input-group-append">
+                            <button type="button" class="btn btn-secondary btn-number">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <a class="btn btn-success btn-sm ml-3" href="shopnow.aspx">
+                        <i class="fa fa-shopping-cart"></i>Cart
+                                <span class="badge badge-light">0</span>
+                    </a>
+                    <a class="btn btn-success btn-sm ml-3" href="#">
+                        <i class=""></i>Buy Now
+                                
+                    </a>
+                </form>
+            </div>
         </div>
-    </form>
+    </nav>
+    <!--sliding images-->
+    <section class="jumbotron text-center">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="mySlides ">
+                    <asp:Image ID="Image1" runat="server" Style="width: 400px; height: 300px" AlternateText="caption" ImageUrl="~/images/images.jpg" />
+
+                </div>
+                <div class="mySlides ">
+                    <asp:Image ID="Image2" runat="server" Style="width: 400px; height: 300px" AlternateText="caption" ImageUrl="~/images/images1.jpg" />
+
+                </div>
+                <div class="mySlides ">
+                    <asp:Image ID="Image3" runat="server" Style="width: 400px; height: 300px" AlternateText="caption" ImageUrl="~/images/images2.jpg" />
+
+                </div>
+                <div class="mySlides ">
+                    <asp:Image ID="Image4" runat="server" Style="width: 400px; height: 300px" AlternateText="caption" ImageUrl="~/images/images5.jpg" />
+
+                </div>
+
+            </div>
+
+            <div class="col-sm-6">
+                <p class="quote">Fresh natural  food</p>
+                <h1>Get 10%  discount</h1>
+                <h3>On every registered user</h3>
+            </div>
+        </div>
+        <script>
+            // Automatic Slideshow - change image every 4 seconds
+            var myIndex = 0;
+            carousel();
+
+            function carousel() {
+                var i;
+                var x = document.getElementsByClassName("mySlides");
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                myIndex++;
+                if (myIndex > x.length) { myIndex = 1 }
+                x[myIndex - 1].style.display = "block";
+                setTimeout(carousel, 4000);
+            }
+
+        </script>
+    </section>
+    <!--categories-->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="Default.aspx">Home</a></li>
+                        <li class="breadcrumb-item"><a href="#categories">Category</a></li>
+
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <div class="row">
+            <!--Left-->
+            <div class="col-md-3">
+                <div class="card bg-light mb-3">
+                    <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-list"></i>Categories</div>
+                    <ul class="list-group category_block">
+                        <li class="list-group-item"><a href="category.html">Canned Goods</a></li>
+                        <li class="list-group-item"><a href="category.html">Dairy</a></li>
+                        <li class="list-group-item"><a href="category.html">Meat</a></li>
+                        <li class="list-group-item"><a href="category.html">Produce</a></li>
+                        <li class="list-group-item"><a href="category.html">Baking goods</a></li>
+                    </ul>
+                </div>
+                <!--  Products-->
+                <div class="card bg-light mb-3">
+                    <div class="card-header bg-success text-white text-uppercase">Popular product</div>
+                    <div class="card-body">
+                        <asp:Image ID="Image5" runat="server" Style="width: 400px" AlternateText="caption" ImageUrl="~/images/images7.jpg" />
+                        <h5 class="card-title">tomatoes</h5>
+                        <p class="card-text">xxSome quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="bloc_left_price">99.00 $</p>
+                        <div class="col">
+                            <a href="#" class="btn btn-success btn-block">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Right-->
+            <div class="col-md-9">
+                <asp:ContentPlaceHolder runat="server" ID="body" />
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-light" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-lg-4 col-xl-3">
+                    <h5>About</h5>
+                    <hr class="bg-white mb-2 mt-0 d-inline-block mx-auto w-25">
+                    <p class="mb-0">
+                        We offer the  best groceries and best prices as soon as you need it.
+                    </p>
+                </div>
+
+
+
+                <div class="col-md-4 col-lg-2 col-xl-2 mx-auto">
+                    <h5>Others links</h5>
+                    <hr class="bg-white mb-2 mt-0 d-inline-block mx-auto w-25">
+                    <ul class="list-unstyled">
+                        <li><a href="#"><i class="fa fa-twitter fa-2x"></i> Twitter</a></li>
+                        <li><a href="#"><i class="fa fa-facebook fa-2x"></i> Facebook</a></li>
+                        <li><a href="#"><i class="fa fa-instagram fa-2x"></i> Instagram</a></li>
+                        <li><a href="#"><i class="fa fa-linkedin fa-2x"></i> LinkedIn</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 col-lg-3 col-xl-3">
+                    <h5>Contact</h5>
+                    <hr class="bg-white mb-2 mt-0 d-inline-block mx-auto w-25">
+                    <ul class="list-unstyled">
+                        <li><i class="fa fa-home mr-2"></i>Grocery  shop</li>
+                        <li><i class="fa fa-envelope mr-2"></i>email@example.com</li>
+                        <li><i class="fa fa-phone mr-2"></i>+234556546</li>
+                        <li><i class="fa fa-print mr-2"></i>+167585453</li>
+                    </ul>
+                </div>
+                <div class="col-12 copyright mt-3">
+                    <p class="float-left">
+                        <i class="fa fa-caret-square-o-up" style="font-size: 60px;"></i>
+
+                    </p>
+                    <p class="text-right text-muted">created  <i class="fa fa-heart"></i>by Ycc</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
+
 </html>
